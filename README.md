@@ -34,4 +34,4 @@ A modern, interactive digital clock featuring:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/Advanced-Digital-Clock.git
+   git clone https://github.com/Longno12/Advanced-Digital-Clock.git

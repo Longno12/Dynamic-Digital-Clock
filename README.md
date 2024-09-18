@@ -21,7 +21,7 @@ A modern, interactive digital clock featuring:
 - **Dark/Light Mode**: Toggle between dark and light modes to match user preference.
 
 ## Demo
-![Digital Clock Demo](link-to-screenshot.png)
+![Digital Clock Demo](https://github.com/Longno12/Dynamic-Digital-Clock/blob/main/Screenshot%202024-09-18%20064522.png)
 
 ## Technologies Used
 

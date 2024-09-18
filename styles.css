@@ -1,0 +1,145 @@
+:root {
+  --primary-color: #00ff00;
+  --background-color: #1a1a1a;
+  --text-color: white;
+  --font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock-container {
+  position: relative;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.digital-clock {
+  font-size: 48px;
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 10px;
+  background: radial-gradient(circle, #222, #111);
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
+  margin-bottom: 10px;
+  transition: background 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+.date {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #888;
+}
+
+.analog-clock {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 10px solid var(--primary-color);
+  border-radius: 50%;
+  background: radial-gradient(circle, #111, #333);
+  margin: 20px auto;
+}
+
+.hand {
+  position: absolute;
+  background: var(--primary-color);
+  border-radius: 50%;
+  transform-origin: bottom center;
+}
+
+.hour-hand {
+  width: 8px;
+  height: 40px;
+  top: 20px;
+  left: 50%;
+  transform: rotate(0deg);
+}
+
+.minute-hand {
+  width: 6px;
+  height: 60px;
+  top: 10px;
+  left: 50%;
+  transform: rotate(0deg);
+}
+
+.second-hand {
+  width: 4px;
+  height: 70px;
+  top: 0px;
+  left: 50%;
+  transform: rotate(0deg);
+  background: red;
+}
+
+.weather-widget,
+.alarm-widget,
+.world-clocks {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+input[type="time"] {
+  font-size: 18px;
+  padding: 5px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button,
+select {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover,
+select:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+.light-mode {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+@keyframes clockTick {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Digital Clock</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="clock-container">
+            <div class="digital-clock" id="clock">00:00:00</div>
+            <div class="date" id="date">YYYY-MM-DD</div>
+            <div class="analog-clock" id="analogClock">
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+        
+        <div class="weather-widget" id="weatherWidget">
+            <div id="weatherLocation">Location: <span id="locationName"></span></div>
+            <div id="weatherTemp">Temperature: <span id="temperature"></span>°C</div>
+        </div>
+        
+        <div class="alarm-widget" id="alarmWidget">
+            <input type="time" id="alarmTime" />
+            <button id="setAlarm">Set Alarm</button>
+            <div id="alarmStatus"></div>
+        </div>
+        
+        <div class="world-clocks">
+            <div id="newYorkClock">New York: 00:00:00</div>
+            <div id="tokyoClock">Tokyo: 00:00:00</div>
+        </div>
+        
+        <div class="controls">
+            <button id="toggleMode">Toggle Dark/Light Mode</button>
+            <button id="toggleFormat">Switch to 12-Hour Format</button>
+            <select id="themeSelector">
+                <option value="#00ff00">Green</option>
+                <option value="#0000ff">Blue</option>
+                <option value="#ff0000">Red</option>
+                <option value="#800080">Purple</option>
+                <option value="#ff4500">Orange</option>
+                <option value="#00ffff">Cyan</option>
+            </select>
+            <select id="fontSelector">
+                <option value="'Poppins', sans-serif">Poppins</option>
+                <option value="'Arial', sans-serif">Arial</option>
+                <option value="'Courier New', monospace">Courier New</option>
+                <option value="'Georgia', serif">Georgia</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+                <option value="'Roboto', sans-serif">Roboto</option>
+            </select>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

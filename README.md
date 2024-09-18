@@ -19,3 +19,19 @@ A modern, interactive digital clock featuring:
 - **Alarm System**: Allows users to set an alarm and receive a notification when it rings.
 - **Customizable Themes**: Users can change the clock’s primary color and font family.
 - **Dark/Light Mode**: Toggle between dark and light modes to match user preference.
+
+## Demo
+![Digital Clock Demo](link-to-screenshot.png)
+
+## Technologies Used
+
+- **HTML5**: Structure of the webpage
+- **CSS3**: Styling with customizable themes and animations
+- **JavaScript (ES6+)**: Logic for clock updates, weather integration, and user interactions
+- **OpenWeather API**: Fetches live weather data
+
+## Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Advanced-Digital-Clock.git

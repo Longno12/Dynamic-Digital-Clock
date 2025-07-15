@@ -19,7 +19,7 @@ Dynamic-Digital-Clock is a beautifully designed, highly interactive digital and 
 
 *(**Note to developer:** Please replace the placeholder image below with a new screenshot of the beautiful Dynamic-Digital-Clock interface!)*
 
-![Dynamic-Digital-Clock Demo](https://raw.githubusercontent.com/Longno12/Dynamic-Digital-Clock/main/Screenshot%202024-09-18%20064522.png)
+![Dynamic-Digital-Clock Demo](https://github.com/Longno12/Dynamic-Digital-Clock/blob/main/download.png)
 *^ An image of the previous version. The new version is significantly more modern!*
 
 ## Technologies Used

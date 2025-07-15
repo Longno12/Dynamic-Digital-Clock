@@ -1,61 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="neon" data-font="poppins">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Digital Clock</title>
+    <title>AuraClock - A Modern Timepiece</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="clock-container">
-            <div class="digital-clock" id="clock">00:00:00</div>
-            <div class="date" id="date">YYYY-MM-DD</div>
-            <div class="analog-clock" id="analogClock">
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
+    <div id="app-container">
+        <div class="background-gradient"></div>
+
+        <main class="main-content">
+            <div class="time-display">
+                <div id="date-display" class="date-display"></div>
+                <div id="digital-clock" class="digital-clock">00:00:00</div>
             </div>
-        </div>
-        
-        <div class="weather-widget" id="weatherWidget">
-            <div id="weatherLocation">Location: <span id="locationName"></span></div>
-            <div id="weatherTemp">Temperature: <span id="temperature"></span>°C</div>
-        </div>
-        
-        <div class="alarm-widget" id="alarmWidget">
-            <input type="time" id="alarmTime" />
-            <button id="setAlarm">Set Alarm</button>
-            <div id="alarmStatus"></div>
-        </div>
-        
-        <div class="world-clocks">
-            <div id="newYorkClock">New York: 00:00:00</div>
-            <div id="tokyoClock">Tokyo: 00:00:00</div>
-        </div>
-        
-        <div class="controls">
-            <button id="toggleMode">Toggle Dark/Light Mode</button>
-            <button id="toggleFormat">Switch to 12-Hour Format</button>
-            <select id="themeSelector">
-                <option value="#00ff00">Green</option>
-                <option value="#0000ff">Blue</option>
-                <option value="#ff0000">Red</option>
-                <option value="#800080">Purple</option>
-                <option value="#ff4500">Orange</option>
-                <option value="#00ffff">Cyan</option>
-            </select>
-            <select id="fontSelector">
-                <option value="'Poppins', sans-serif">Poppins</option>
-                <option value="'Arial', sans-serif">Arial</option>
-                <option value="'Courier New', monospace">Courier New</option>
-                <option value="'Georgia', serif">Georgia</option>
-                <option value="'Times New Roman', serif">Times New Roman</option>
-                <option value="'Roboto', sans-serif">Roboto</option>
-            </select>
-        </div>
+
+            <div class="analog-clock-wrapper">
+                <div class="analog-clock">
+                    <div class="hand hour-hand" id="hour-hand"></div>
+                    <div class="hand minute-hand" id="minute-hand"></div>
+                    <div class="hand second-hand" id="second-hand"></div>
+                    <div class="center-dot"></div>
+                </div>
+            </div>
+
+            <div class="widget-bar">
+                <div class="widget weather-widget" id="weather-widget">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="location-name">Loading...</span>
+                    <span id="temperature"></span>
+                </div>
+                <div class="widget alarm-widget" id="alarm-widget">
+                    <i class="fas fa-bell"></i>
+                    <span id="alarm-status">No Alarm Set</span>
+                </div>
+            </div>
+        </main>
+
+        <button id="settings-toggle" class="settings-toggle-btn">
+            <i class="fas fa-cog fa-spin"></i>
+        </button>
+
+        <aside id="settings-panel" class="settings-panel">
+            <div class="settings-header">
+                <h3>Settings</h3>
+                <button id="settings-close-btn" class="close-btn">×</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label for="theme-selector">Theme</label>
+                    <select id="theme-selector">
+                        <option value="neon">Neon</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="sunrise">Sunrise</option>
+                        <option value="forest">Forest</option>
+                        <option value="mono-light">Mono Light</option>
+                        <option value="mono-dark">Mono Dark</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="font-selector">Font</label>
+                    <select id="font-selector">
+                        <option value="poppins">Poppins</option>
+                        <option value="roboto">Roboto</option>
+                        <option value="nunito">Nunito</option>
+                        <option value="system-ui">System UI</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Time Format</label>
+                    <button id="toggle-format-btn" class="setting-button">Switch to 12-Hour</button>
+                </div>
+                <div class="setting-item">
+                    <label for="alarm-time-input">Set Alarm</label>
+                    <div class="alarm-input-group">
+                        <input type="time" id="alarm-time-input">
+                        <button id="set-alarm-btn" class="setting-button">Set</button>
+                    </div>
+                </div>
+                <div class="setting-item world-clocks-setting">
+                    <label>World Clocks</label>
+                    <div id="world-clocks-container">
+                    </div>
+                </div>
+            </div>
+        </aside>
     </div>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </body>
 </html>

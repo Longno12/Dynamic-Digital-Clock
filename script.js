@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- CONFIGURATION ---
-        // --- CONFIGURATION ---
     const API_KEY = 'YOUR_API_KEY'; // IMPORTANT: Replace with your OpenWeatherMap API key
     const DEFAULT_LOCATION = 'San Francisco';
     const WORLD_CLOCKS = [
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Seoul', timeZone: 'Asia/Seoul' }
     ];
 
-    // --- DOM ELEMENT SELECTORS ---
     const elements = {
         digitalClock: document.getElementById('digital-clock'),
         dateDisplay: document.getElementById('date-display'),
@@ -46,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         html: document.documentElement,
     };
 
-    // --- STATE MANAGEMENT ---
     let state = {
         is24HourFormat: true,
         alarmTime: null,
@@ -54,15 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         userLocation: DEFAULT_LOCATION,
     };
 
-    // --- CLOCK AND TIME ---
     function updateClocks() {
         const now = new Date();
-
-        // Digital Clock
         const hours = now.getHours();
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
-
         let displayHours = hours;
         let period = '';
         if (!state.is24HourFormat) {
@@ -70,13 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
             displayHours = hours % 12 || 12;
         }
         elements.digitalClock.textContent = `${String(displayHours).padStart(2, '0')}:${minutes}:${seconds}${period}`;
-
-        // Date Display
         elements.dateDisplay.textContent = now.toLocaleDateString(undefined, {
             weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
         });
 
-        // Analog Clock
         const secondsRatio = now.getSeconds() / 60;
         const minutesRatio = (secondsRatio + now.getMinutes()) / 60;
         const hoursRatio = (minutesRatio + now.getHours()) / 12;
@@ -84,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setRotation(elements.secondHand, secondsRatio);
         setRotation(elements.minuteHand, minutesRatio);
         setRotation(elements.hourHand, hoursRatio);
-
         checkAlarm(now);
         updateWorldClocks();
     }
@@ -109,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- WEATHER ---
     async function fetchWeather(location) {
         if (API_KEY === 'YOUR_API_KEY' || !API_KEY) {
             console.warn('API Key for weather is not set. Skipping fetch.');
@@ -159,8 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
-    // --- ALARM ---
     function setAlarm() {
         const timeValue = elements.alarmTimeInput.value;
         if (timeValue) {
@@ -182,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- SETTINGS & UI ---
     function toggleSettings() {
         elements.settingsPanel.classList.toggle('open');
     }
@@ -208,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateClocks();
     }
 
-    // --- EVENT LISTENERS ---
     function addEventListeners() {
         elements.settingsToggle.addEventListener('click', toggleSettings);
         elements.settingsClose.addEventListener('click', toggleSettings);
@@ -218,9 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.setAlarmBtn.addEventListener('click', setAlarm);
     }
     
-    // --- INITIALIZATION ---
-    function init() {
-        // Load saved preferences
+    function init() {s
         const savedTheme = localStorage.getItem('clockTheme') || 'neon';
         const savedFont = localStorage.getItem('clockFont') || 'poppins';
         const savedFormat = localStorage.getItem('is24HourFormat');
